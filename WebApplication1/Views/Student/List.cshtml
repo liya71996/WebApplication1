@@ -1,0 +1,65 @@
+﻿@model  IEnumerable<Student>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<table  border="1" cellspacing="10" height="600px" width="900px">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            M1
+        </th>
+        <th>
+            M2
+        </th>
+        <th>
+            M3
+        </th>
+        <th>   </th>
+    </tr>
+
+    @foreach (var i in Model)
+    {
+   <tr>
+
+    <td>@i.Id</td>
+    <td>@i.Name</td>
+    <td>@i.M1</td>
+    <td>@i.M2</td>
+    <td>@i.M3</td>
+    <td> <button onclick="getdata('@i.Id', '@i.Name',@i.M1,@i.M2,@i.M3)">view</button></td>
+
+
+</tr>
+    }
+</table>
+<br />
+Name=<label id="n1"></label>
+<br />
+M1=<label id="n2"></label>
+
+<script>
+    function getdata(Id, Name, M1, M2, M3) {
+        // alert("Name=" + Name + "Id=" + Id + "M1=" + M1 + "M2=" + M2 + "M3=" + M3);
+        document.getElementById("n1").innerHTML = Name;
+        document.getElementById("n2").innerHTML = M1;
+
+
+    }
+</script>
+
+
+
+
+
+
+
+
